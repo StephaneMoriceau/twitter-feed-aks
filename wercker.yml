@@ -13,9 +13,9 @@ build:
         name: maven build
         code: mvn clean assembly:assembly
         
-  push-to-acr:
-    steps:
-      - internal/docker-push:
+push-to-acr:
+   steps:
+     - internal/docker-push:
         azure-client-id: $AZURE_CLIENT_ID
         azure-client-secret: $AZURE_CLIENT_SECRET
         azure-subscription-id: $AZURE_SUBSCRIPTION_ID
