@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: twitter-feed
-        image: ${AZURE_REGISTRY_NAME}/${REPO_NAME}:${WERCKER_GIT_BRANCH}-${WERCKER_GIT_COMMIT}
+        image: ${AZURE_REGISTRY_NAME}/${REPO_NAME}
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
