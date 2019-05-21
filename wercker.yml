@@ -54,9 +54,9 @@ deploy-to-aks:
       name: "Visualise Kubernetes config"
       code: cat kubernetes.yml
 
-  - kubectl:
-      name: deploy to kubernetes
-      server: $KUBERNETES_MASTER
-      token: $KUBERNETES_AUTH_TOKEN
-      insecure-skip-tls-verify: true
-      command: apply -f kubernetes.yml
+#  - kubectl:
+#      name: deploy to kubernetes
+#      server: $KUBERNETES_MASTER
+#      token: $KUBERNETES_AUTH_TOKEN
+#      insecure-skip-tls-verify: true
+#     command: apply -f kubernetes.yml
