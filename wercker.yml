@@ -27,7 +27,7 @@ push-to-acr:
         repository: $REPO_NAME
 
 #Deploy our container from the Azure Container Registry to the Azure Kubernetes Engine (AKS)
-deploy-to-cluster:
+deploy-to-aks:
   box:
       id: alpine
       cmd: /bin/sh
