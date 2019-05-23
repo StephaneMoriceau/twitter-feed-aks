@@ -17,14 +17,14 @@ spec:
     spec:
       containers:
       - name: twitter-feed
-        image: ${AZURE_REGISTRY_NAME}/${REPO_NAME}
+        image: ${AZURE__LOGIN_SERVER}/${REPO_NAME}:latest
         imagePullPolicy: Always
         ports:
         - name: twitter-feed
           containerPort: 8080
           protocol: TCP
       imagePullSecrets:
-        - name: wercker
+        - name: acr_auth
 ---
 apiVersion: v1
 kind: Service
