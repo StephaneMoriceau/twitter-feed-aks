@@ -7,18 +7,28 @@ box:
 #Build our application using Maven, just as we always have
 build:
   steps:
-    - kubectl
-      name: deploy to kubernetes
-      server: $KUBERNETES_MASTER
-      token: $KUBERNETES_AUTH_TOKEN
-      insecure-skip-tls-verify: true
-      command: get pods
     #- install-packages:
         #packages: maven
    # - script:
        # name: maven build
        # code: mvn clean assembly:assembly
         
+get-pods:
+  box:
+      id: alpine
+      cmd: /bin/sh
+
+  steps:
+
+  - bash-template
+
+  - kubectl:
+      name: delete secret
+      server: $KUBERNETES_MASTER
+      token: $KUBERNETES_AUTH_TOKEN
+      insecure-skip-tls-verify: true
+      command: get pods
+
 push-to-acr:
   box: busybox
   steps:
